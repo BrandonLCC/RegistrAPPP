@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Materia seleccionada de la pagina 4 -->
+  <ion-header [translucent]="true"></ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Materia seleccionada de la pagina 4 -->
+  <div class="div-materia-seleccionada">
+    <ion-card-header> 
+      <img *ngIf="cursoSeleccionado?.imagenCurso" class="img-materia" [src]="cursoSeleccionado?.imagenCurso" />
+
+      <ion-card-subtitle class="titulo">
+        Materia: {{ cursoSeleccionado?.nombreCurso }}
+      </ion-card-subtitle>
+      <ion-card-subtitle class="subtitulo-1">
+        Sección: {{ cursoSeleccionado?.seccion }}
+      </ion-card-subtitle>
+      <ion-card-subtitle class="subtitulo-2">
+        Sigla: {{ cursoSeleccionado?.sigla }}
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content class="desc-materia">
+      {{ cursoSeleccionado?.DescripcionCurso }}
+    </ion-card-content>
+  </div>
+
+  <!-- Boton volver -->
+  <ion-button
+    expand="full"
+    class="btn-volver"
+    [routerLink]="['/fourth-page']">
+    Volver atrás
+  </ion-button>
+
+  <!-- Otros contenidos relacionados con el curso -->
+</ion-content>
+
+ 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="titulo-asistenica">Tomar asistencia</ion-card-title>
+      
+    </ion-card-header>
+    
+
+    <ion-card-content class="subtitulo-3">
+      
+En esta sección, se registra la asistencia de los estudiantes de la materia que seleccionaste previamente.    </ion-card-content>
+    <div class="div-bottones">
+    <ion-button class="btn-1"  [routerLink]="['/eight-page']">
+      <ion-icon slot="start" name="qr-code-outline"></ion-icon>Generar un código
+      QR</ion-button
+    >
+    <ion-button class="btn-2" [routerLink]="['/six-page']">
+      <ion-icon slot="start" name="people-outline"></ion-icon> Asitencia
+      Manual</ion-button
+    >
+    </div>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="titulo-ver-asistencia">Ver asistencia</ion-card-title>
+      <ion-card-subtitle class="sub-ver-asistencia">Ver los alumnos con asistencia</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content class="contenido-ver-asistencia">
+      Después de tomar la asistencia de la clase, puedes revisar el registro de asistencia de los alumnos.    </ion-card-content>
+
+      <ion-button class="btn-3" expand="full" [routerLink]="['/seven-page']">
+        <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+        Ver asistencia Alumnos
+      </ion-button>
+      
+  </ion-card>
+</ion-content>

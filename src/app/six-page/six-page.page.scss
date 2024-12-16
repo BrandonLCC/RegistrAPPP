@@ -1,0 +1,93 @@
+ion-content {
+  --background: white;
+}
+
+.toolbar-principal {
+  --background: #050b1b;
+  box-shadow: none;
+  color: #ffffff;
+
+  padding: 10px;
+  text-align: center;
+}
+
+/* botones */
+.btn-1 {
+  --background: rgb(0, 0, 0);
+  color: #ffffff;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.btn-2 {
+  --background: linear-gradient(to right, #ff8000, #ffc000);
+  color: #000000;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/* CARD */
+
+ion-card {
+  --background: #050b1b;
+}
+
+ion-card-title {
+  color: transparent;
+  background: linear-gradient(to right, #ff9900, #eeff00);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+ion-list {
+  background: white;
+  color: white;
+}
+
+p {
+  color: #ffffff;
+}
+
+ion-checkbox {
+  color: #ffffff;
+}
+
+ion-item {
+  --background: #081127;
+  color: white;
+  margin: 10px;
+  --ion-item-border-color: transparent; 
+  --ion-item-border-width: 0px; 
+  border-radius: 10px;
+
+}
+
+
+
+.check-ausente {
+  --checkbox-background: #ffb8b8;
+  --checkbox-background-checked: #ff4d4d;
+  --size: 20px;
+  --border-color: #ffcccc;
+  --border-color-checked: #ff4d4d;
+  --checkmark-color: #ffffff;
+  color: #ff4d4d;
+}
+
+.check-presente {
+  --checkbox-background: #b7ffb7;
+  --checkbox-background-checked: #4dff4d;
+  --size: 20px;
+  --border-color: #ccffcc;
+  --border-color-checked: #4dff4d;
+  --checkmark-color: #ffffff;
+  color: #4dff4d;
+}
+
+.btn-final {
+  --background: linear-gradient(to right, #20c514, #20c514);
+  color: #000000;
+  margin-right: 15px;
+  margin-left: 15px;
+}

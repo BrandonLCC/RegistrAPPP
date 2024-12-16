@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="div-formulario">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="titulo-registro">Registro de usuario</ion-card-title>
+      </ion-card-header>
+      <img class="logo" src="/assets/img/logo-proyecto.png" alt="Logo del proyecto">
+      <ion-card-content>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input class="input-usuario" [(ngModel)]="nombre" fill="outline" placeholder="Ingresa tu nombre"></ion-input>
+        <br />
+          <ion-label position="floating">Email</ion-label>
+          <ion-input [(ngModel)]="correo" type="email" placeholder="email@domain.com" fill="outline"></ion-input>
+        <br />
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input [(ngModel)]="contrasena" type="password" placeholder="Ingresa contraseña" fill="outline"></ion-input>
+
+        <!-- Botones -->
+        <div class="botones-pagina">
+          <ion-button expand="full" class="btn-1"  (click)="register()">Registrar</ion-button>
+          <ion-button expand="full" class="btn-2"  [routerLink]="['']">Inicio sesión</ion-button>
+
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

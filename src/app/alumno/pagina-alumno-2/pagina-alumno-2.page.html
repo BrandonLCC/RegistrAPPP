@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+
+<ion-content [fullscreen]="true">
+
+  <div class="HERO-materia">
+    <h4 class="subtitulo-h6-1">Sección</h4>
+    <h1 class="titulo-h1">Mis materias</h1>
+    <h6 class="subtitulo-h6-2">Porfavor, escaea el codigo QR para tomar la asistencia de clases.</h6>
+  </div>
+  
+  <ion-card class="card-usuario">
+    <ion-card-content class="ion-bienvenida">
+      <h4 class="text-p-bienvenida-user">
+        ¡Ahora te encuentras en las materias que tienes a tu cargo!
+        <p class="p-cantidad-materias"><b>Cantidad de materias:</b> {{ cursos.length }}</p>
+        
+        <ion-button
+          expand="full"
+          class="button-2"
+          fill="clear"
+          [routerLink]="['/second-page']">
+          <ion-icon
+            class="icon3"
+            slot="start"
+            name="arrow-back-outline"></ion-icon>
+          Volver
+        </ion-button>
+      </h4>
+    </ion-card-content>
+  </ion-card>
+ 
+  <!-- Materias -->
+  <div class="div-todas-las-materias">
+    <ion-card *ngFor="let curso of cursos">
+      <ion-card-header>
+        <img class="img-materia" alt="Imagen de materia" [src]="curso.imagenCurso" />
+        <ion-card-title class="titulo">{{ curso.nombreCurso }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <div class="texto-materia">
+          <ion-card-subtitle class="subtitulo-1"><b>Sección:</b> {{ curso.seccion }}</ion-card-subtitle>
+          <ion-card-subtitle class="subtitulo-2"><b>Sigla:</b> {{ curso.sigla }}</ion-card-subtitle>
+          <ion-card-subtitle class="subtitulo-2"><b>Descripción:</b> {{ curso.DescripcionCurso }}</ion-card-subtitle>
+        </div>
+      </ion-card-content>
+
+      <ion-button
+        expand="full"
+        class="button-1"
+        fill="clear"
+        (click)="irPagina5ConDatos(curso)">
+        <ion-icon slot="start" name="qr-code-outline"></ion-icon> Escanea el QR para la asistencia 
+      </ion-button>
+    </ion-card>
+  </div>
+
+</ion-content>

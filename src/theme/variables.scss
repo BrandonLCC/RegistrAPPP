@@ -1,0 +1,33 @@
+/**
+ * Barcode Scanning
+ * -------------------------------------------
+ */
+
+ion-toolbar {
+  --background: linear-gradient(45deg, #ff8000, #ffc000);
+}
+
+ body.barcode-scanning-active {
+  visibility: hidden;
+  --background: transparent;
+  --ion-background-color: transparent;
+}
+
+body.barcode-scanning-active .barcode-scanning-modal {
+  visibility: visible;
+}
+
+.barcode-scanning-modal {
+  visibility: visible;
+  --background: transparent;
+  --ion-background-color: transparent;
+  z-index: 100; /* Asegurar que esté por encima de otros elementos */
+}
+
+@media (prefers-color-scheme: dark) {
+  .barcode-scanning-modal {
+    visibility: visible;
+    --background: transparent;
+    --ion-background-color: transparent;
+  }
+}

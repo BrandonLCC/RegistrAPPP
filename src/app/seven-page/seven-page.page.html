@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbar-principal">
+    <ion-title>Tomar Asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<!--CARD DE AUSENTES -->
+  <ion-list>
+    <ion-card *ngFor="let alumno of datosAsistencia.ausentes">
+     
+       
+      <!--Cuerpo de la tarjeta ausentes -->
+      <ion-card-content>
+        <ion-item class="diseño-ausente">
+          <ion-thumbnail slot="start">
+            <img [src]="alumno.picture.thumbnail" alt="{{ alumno.name.first }}">
+          </ion-thumbnail>
+          <ion-label>
+            <ion-card-title>{{ alumno.name.first }} {{ alumno.name.last }}</ion-card-title>
+            <p>Ultima clase: Ausente</p>
+            <p>Asistencia {{ alumno.asistencias  || 0  }}</p>
+            <p>Nº de Clases Registradas: {{ nroClases }}</p>
+           <!-- <p>Porcentaje de asistencia: {{ calculoAsistencia() }}%</p>-->
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <!--CARD DE LOS PRESENTES -->
+  <ion-list>
+    <ion-card  *ngFor="let alumno of datosAsistencia.presentes">
+      
+      <!--Cuerpo de la tarjeta de los presentes -->
+      <ion-card-content  >
+        <ion-item class="diseño-presente">
+          <ion-thumbnail slot="start">
+            <img [src]="alumno.picture.thumbnail" alt="{{ alumno.name.first }}">
+          </ion-thumbnail>
+          <ion-label>
+            <ion-card-title>{{ alumno.name.first }} {{ alumno.name.last }}</ion-card-title>
+            <p>Ultima clase: Presente</p>
+            <p>Asistencia {{ presente }}</p>
+            <p>Nº de Clases Registradas: {{ nroClases }}</p>
+           <!-- <p>Porcentaje de asistencia: {{ calculoAsistencia() }}%</p>-->
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-button class="btn-1"  expand="full" [routerLink]="['/six-page']">Volver a la pagina de asistencia</ion-button>
+  <!-- colocar alert de asistencia tomada -->
+  <ion-button class="btn-2" (click)="btnFinalizarClase()" expand="full" [routerLink]="['/five-page']">Finalizar clase</ion-button>
+
+
+
+</ion-content>

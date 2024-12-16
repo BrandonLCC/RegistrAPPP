@@ -1,0 +1,57 @@
+ion-content {
+    --background:  #e0e0e0;
+  }
+
+.toolbar-principal {
+    --background: linear-gradient(45deg, #ff8000, #ffc000);
+    
+}
+
+.segment-content { 
+    position: relative;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%;
+    text-align: center; 
+    width: 100%; 
+
+} 
+    
+img.imagen-qr { 
+    display: block;
+    max-width: 100%; 
+    width: 320px; 
+    height: auto; 
+    margin: 0 auto; 
+}
+
+h6 {
+    text-align: center;
+    color: #000000; 
+} 
+
+ion-row { 
+    width: 100%; 
+    justify-content: center;
+}
+
+
+.btn-1  {
+    --background: linear-gradient(to right, #ff8000, #ffc000);
+    color: #000000;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-2 {
+    --background: linear-gradient(to right, #000000, #000000);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+ 

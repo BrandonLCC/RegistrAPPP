@@ -1,0 +1,171 @@
+
+ion-content {
+  --background:  #e0e0e0;
+
+}
+
+.HERO-materia {
+  background-color: #01040c;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-bottom: 30px;
+  height: 250px;
+}
+
+ 
+.img-hero {
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  width: 100%;
+  height: 250px;
+  margin: 0;
+  border-radius: 10px;
+  object-fit: cover; 
+}
+
+.titulo-h1 {
+background-color: #ffffff;
+  position: absolute;
+  color: transparent;
+  background: linear-gradient(to right, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  top: 65px;
+  font-size: 50px;
+  font-weight: 900;
+  left: 20px;
+  text-align: center;
+}
+
+.subtitulo-h6-1 {
+    position: absolute;
+    font-weight: bolder;
+    top: 50px;
+    left: 20px;
+    color: rgb(0, 0, 0); 
+}
+
+.subtitulo-h6-2 {
+    position: absolute;
+    top: 130px;
+    left: 20px;
+    color: #ff9900;
+    font-size: 19px;
+    font-weight: 400;    
+}
+
+
+.text-p-bienvenida-user {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  text-align: center;
+
+}
+
+.p-cantidad-materias {
+  color: #ff9900;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* CARD */
+
+.div-todas-las-materias {
+  margin-top: 30px;
+}
+
+ion-card {
+  background-color: #01040c;;
+  position: relative;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.4s ease-in-out;
+}
+
+ion-card:active { transform: scale(1.03);
+}
+
+.img-materia {
+  width: 100%;
+  height: 150px;
+  margin: 0;
+  border-radius: 10px;
+}
+
+.img-materia-filter-blur {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: -1;
+  height: 180px;
+  width: 100%;
+  filter: brightness(45%); 
+
+}
+
+.titulo {
+  top: 20px;
+  margin: 10px;
+  width: 100%;
+  font-size: 25px;
+  text-align: center;
+  color:#ffffff;
+}
+.subtitulo-1 {
+  text-align: center;
+  margin: 5px;
+  color: rgb(255, 255, 255);
+}
+
+.subtitulo-2 {
+    text-align: center;
+    margin: 5px;
+
+    color: rgb(255, 255, 255);
+
+}
+
+.div-bottones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.button-1 {
+  position: relative;
+  --background: linear-gradient(to right, #ff8000, #ffc000);
+  color: #000000;
+  margin: 10px;
+  bottom: 10px;
+}
+
+.button-2 {
+  --background: linear-gradient(to right, #ff8000, #ffc000);
+  color: #000000;
+}
+
+ion-icon {
+    color: #000000;
+}
+
+
+
+.icon3 {
+  color: rgb(0, 0, 0);
+}
+
+ion-content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.card-usuario {
+  background-color: white;;
+  margin-bottom: 20px;
+  border-radius: 10px 0px 10px 0px;
+}

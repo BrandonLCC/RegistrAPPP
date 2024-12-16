@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbar-principal">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/first-page"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Escnaeo QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense"> </ion-header>
+ <br>
+ <br>
+ <br>
+
+  <div class="segnment-content">
+    <img class ="imagen-qr" src="../assets/img/Mi_código_QR_2-1024 (1).jpeg" alt="QR" />
+    <h6>Escanea o seleccióna una imagen</h6>
+    <ion-row>
+      <!--BOTON ESCANEARRR-->
+      <ion-col size="8">
+        <ion-button (click)="startScan()"   class="submit  btn-1" expand="block"
+          >Escanear QR
+          <ion-icon slot="end" name="scan-outline"></ion-icon>
+          </ion-button>
+      </ion-col>
+
+      <!--bOOTON PARA SELECCIONAR UNA IMG-->
+      <ion-col size="8">
+        <ion-button (click)="leerQrImg()" class="submit  btn-2" expand="block">Seleccionar un QR
+          <ion-icon slot="end" name="image-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <!--resultado del escaneo-->
+  <ion-item class="result" *ngIf="resultadoScaneo">
+    <ion-label>
+      <p>Resultado del escaneo de la asistencia</p>
+      <div>{{resultadoScaneo}}</div>
+    </ion-label>
+  </ion-item>
+</ion-content>

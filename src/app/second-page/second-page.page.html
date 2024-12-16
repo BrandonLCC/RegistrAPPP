@@ -1,0 +1,104 @@
+<ion-app>
+  <!--
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item routerLink="/home" routerDirection="root">Home</ion-item>
+        <ion-item routerLink="/about" routerDirection="root">About</ion-item>
+        <ion-item routerLink="/contact" routerDirection="root"
+          >Contact</ion-item
+        >
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+-->
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+  <!--
+  <ion-header [translucent]="true">
+    <ion-toolbar class="toolbar-principal">
+      <ion-title>RegistrAPP</ion-title>
+      <ion-buttons slot="secondary">
+        <ion-button>
+          <ion-icon
+            slot="icon-only"
+            ios="notifications"
+            md="notifications"
+          ></ion-icon>
+        </ion-button>
+        <ion-badge color="danger">70</ion-badge>
+      </ion-buttons>
+      <ion-buttons slot="primary">
+        <ion-button>
+          <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+        <ion-menu-button auto-hide="false"></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>-->
+
+  <ion-content [fullscreen]="true">
+    <!-- AQUI EMPIEZA EL CUERPO PAGINA -->
+    <!-- Mensaje de bienvenida con el nombre de usuario -->
+    <div class="div-titulo">
+      <img class="img-perfil-profesor" alt="Silhouette of mountains" src="../assets/img/img-usuario.png" />
+      <h1 class="titulo-principal">Profesor</h1>
+      <p class="gmail-princial">{{ correo }}</p>
+      <button class="btn-principal-usuario">
+        <!--<ion-icon class="icon-perfil-profesor" name="settings-outline"></ion-icon>-->
+        Ver cuenta
+      </button>
+    </div>
+
+    <!-- TITULO PRESENTACION -->
+    <ion-card class="card-usuario">
+      <ion-card-content class="ion-bienvenida">
+        <p class="text-p-bienvenida-user">
+          ¡Hola, {{ correo }}!🖐 ahora te encuentras en la página principal.
+        </p>
+      </ion-card-content>
+      <div class="div-button">
+        <ion-button class="boton-regresar" [routerLink]="['']" expand="full">
+          <ion-icon name="arrow-back"></ion-icon>
+          Regresar
+        </ion-button>
+
+        <ion-button (click)="generateQR()" expand="full">Generar QR</ion-button>
+        <div *ngIf="qrCodeUrl">
+          <img [src]="qrCodeUrl" alt="Código QR" />
+        </div>
+        <ion-button (click)="takePhoto()">Escanear</ion-button>
+
+ 
+      </div>
+    </ion-card>
+
+
+    <!-- Card curso -->
+    <ion-card class="ion-card-materias">
+      <ion-card-header>
+        <ion-card-title>Mis materias</ion-card-title>
+        <ion-card-subtitle>Consulta las materias de tus alumnos</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- Materias -->
+        <ion-item class="card-materia" [routerLink]="['/fourth-page']">
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="../assets/img/img-materia.webp" />
+          </ion-thumbnail>
+          <ion-label>Ir a mis materias</ion-label>
+          <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+
+
+  </ion-content>
+</ion-app>

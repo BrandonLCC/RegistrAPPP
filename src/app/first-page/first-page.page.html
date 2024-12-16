@@ -1,0 +1,49 @@
+<ion-content [fullscreen]="true">
+
+  <div class="div-formulario">
+    <ion-card [ngClass]="{'form-border-focus': !inputValidoPass}">
+      <ion-card-header>
+        <ion-card-title class="title-register">Ingreso de usuario </ion-card-title>
+      </ion-card-header>
+ 
+      <img class="logo" src="/assets/img/logo-proyecto.png" alt="mi imagen">
+
+      <ion-card-content>
+        <form [formGroup]="loginFormulario" (ngSubmit)="gotoSecondPage()">
+          <p class="text-p-1">Si eres nuevo, debes registrarte para iniciar sesión</p>
+          <!-- Campos de informacion  -->
+          <ion-input formControlName="correo" [(ngModel)]="correo" label="Correo electronico" label-placement="floating"
+            fill="outline" placeholder="Correo usuario" maxlength="40" slot="end">
+          </ion-input>
+
+          <br />
+
+          <ion-input formControlName="contrasena" [(ngModel)]="contrasena" label="CONTRASEÑA" label-placement="floating"
+            fill="outline" placeholder="Contraseña" maxlength="30" type="password" value="password">
+            <ion-input-password-toggle color="medium" slot="end"></ion-input-password-toggle>
+          </ion-input>
+
+          <!-- Mensaje de validacion -->
+          <p class="text-p-2">{{ mensaje || ' ' }}</p>
+
+          <!-- Botones -->
+          <div class="button-page">
+            <ion-button [disabled]="!loginFormulario.valid" type="submit" shape="round" expand="full"
+              style="--background: #FFC107 " (click)="gotoSecondPage()">INGRESAR</ion-button>
+            <ion-button shape="round" expand="full" style="--background: #FFC107 "
+              (click)="gotoThirdPage()">RECUPERAR</ion-button>
+            <ion-button shape="round" expand="full" style="--background: black; --color: white;"
+              (click)="gotoregister()">CREAR CUENTA</ion-button>
+            
+              <ion-button shape="round" expand="full" style="--background: #FFC107"  [routerLink]="['/eight-page']">
+                QR</ion-button>
+                <ion-button shape="round" expand="full" style="--background: #FFC107"  [routerLink]="['/pagina-alumno-3']">
+                escanear QR</ion-button>
+             
+          </div>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+

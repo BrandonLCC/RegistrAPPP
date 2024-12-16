@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>eight-page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+  </ion-header>
+  <!--Generar QRR-->
+  <ion-button (click)="generateQR()" expand="full">Generar QR</ion-button>
+  <div *ngIf="qrCodeUrl">
+    <img [src]="qrCodeUrl" alt="Código QR" />
+  </div>
+
+  <!--resultado del escaneo-->
+<!--  <ion-button (click)="startScan()" class="submit" expand="block">escanear</ion-button>
+-->
+<ion-item class="result" *ngIf="resultadoScaneo">
+<ion-label>
+  <p>Resultado del escaneo</p>
+  <div>{{resultadoScaneo}}</div>
+</ion-label>
+</ion-item>
+
+</ion-content>
+ 

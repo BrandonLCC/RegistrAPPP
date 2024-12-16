@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbar-principal">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/first-page"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recuperar contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Recuperar</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header class="card-header">
+      <ion-card-title class="titulo">Recuperar Contraseña</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p class="texto-p-1">Ingresa tu nombre de usuario</p>
+      <ion-input label="usuario" label-placement="floating" fill="outline" placeholder="ExampleUser" maxlength="20"
+        [(ngModel)]="inputExtractName" required>
+      </ion-input>
+
+      <p class="texto-p-1">Correo electrónico</p>
+      <ion-input label="CORREO ELECTRONICO" label-placement="floating" fill="outline"
+        placeholder="ExampleUser@gmail.com" [(ngModel)]="correo" required>
+      </ion-input>
+
+      <p>{{ mensaje }}</p>
+
+      <!-- Botón para abrir el modal de recuperación de contraseña -->
+      <ion-button id="open-modal" expand="full" shape="round" class="boton-recuperar">
+        Recuperar
+      </ion-button>
+
+      <!-- Modal para la recuperación de contraseña -->
+      <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-buttons slot="start">
+                <ion-button (click)="cancel()">Cancelar</ion-button>
+              </ion-buttons>
+              <ion-title>Restablecer Contraseña</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding">
+            <!-- Campos de nueva contraseña dentro del modal -->
+            <p class="texto-p-1">Nueva Contraseña</p>
+            <ion-input label="NUEVA CONTRASEÑA" type="password" label-placement="floating" fill="outline"
+              [(ngModel)]="nuevaContrasena">
+            </ion-input>
+
+            <p class="texto-p-1">Confirmar Nueva Contraseña</p>
+            <ion-input label="CONFIRMAR CONTRASEÑA" type="password" label-placement="floating" fill="outline"
+              [(ngModel)]="confirmarContrasena">
+            </ion-input>
+
+            <ion-button class="boton-recuperar" (click)="resetPassword()" expand="full" shape="round">
+              Guardar Nueva Contraseña
+            </ion-button>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+
+      <ion-button class="boton-volver" (click)="goBack()" expand="full" shape="round">
+        <ion-icon name="arrow-back"></ion-icon>
+        Volver
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
