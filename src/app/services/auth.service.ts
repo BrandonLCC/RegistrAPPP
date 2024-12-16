@@ -21,9 +21,9 @@ export class AuthService {
 */
 
 
-private apiUrl = 'http://192.168.1.9:3000/api/usuarioo';  // Ajusta la IP externa y el puerto donde corre Angular
-private validateUrl = 'http://192.168.1.9:3000/api/validate-user';
-private resetUrl = 'http://192.168.1.9:3000/api/reset-password';
+private apiUrl = 'http://localhost:3000/api/usuarioo';  // Ajusta la IP externa y el puerto donde corre Angular
+private validateUrl = 'http://localhost:3000/api/validate-user';
+private resetUrl = 'http://localhost:3000/api/reset-password';
 
   constructor(private http: HttpClient) { }
 
@@ -59,7 +59,7 @@ private resetUrl = 'http://192.168.1.9:3000/api/reset-password';
   }
 
   obtenerCursosProfesor(idUsuario: number) {
-    return this.http.get<{ cursos: any[] }>(`http://192.168.1.9:3000/api/ProfesorCurso/${idUsuario}`);
+    return this.http.get<{ cursos: any[] }>(`http://localhost:3000/api/ProfesorCurso/${idUsuario}`);
   }
   
   
